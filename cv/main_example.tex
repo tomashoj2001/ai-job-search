@@ -1,8 +1,7 @@
-%% Example CV - [YOUR_NAME]
+%% Example CV - Tomás Hojnadel
 %% Comprehensive overview of all competencies, experience, and achievements.
 %% Use as a master reference when tailoring role-specific CVs.
 %%
-%% SETUP: Run /setup to populate this with your actual information.
 %% Compile with: lualatex main_example.tex
 %% (pdflatex often fails on modern MiKTeX with fontawesome5 font-expansion errors.)
 
@@ -24,18 +23,18 @@
     linkcolor=blue,
     filecolor=magenta,
     urlcolor=blue,
-    pdftitle={[YOUR_NAME] - CV},
+    pdftitle={Tomás Hojnadel - CV},
     pdfpagemode=FullScreen,
 }
 \usepackage[scale=0.80]{geometry}
 \usepackage{import}
 
 % personal data
-\name{[First]}{[Last]}
-\address{[Your Address, City, Country]}{}{}
-\phone[mobile]{[+XX XXXXXXXXXX]}
-\email{[your.email@example.com]}
-\extrainfo{\href{[https://linkedin.com/in/your-profile]}{LinkedIn}, \href{[https://github.com/your-username]}{GitHub}}
+\name{Tomás}{Hojnadel}
+\address{Villa Carlos Paz, Córdoba, Argentina (Remote)}{}{}
+\phone[mobile]{+54 9 3541 317326}
+\email{tomashojnadel@gmail.com}
+\extrainfo{\href{https://www.linkedin.com/in/tomashojnadel}{LinkedIn}}
 
 \begin{document}
 
@@ -46,7 +45,7 @@
 % ============================================================
 
 \vspace{6pt}
-\small{[Write a 3-5 line profile statement tailored to the role you're applying for. Focus on what makes you uniquely qualified. Example: "Data scientist with a PhD in [field] and X years of industry experience. Combines deep domain expertise in [domain] with strong applied machine learning and Python development skills. Experienced in developing end-to-end ML pipelines, from data ingestion to stakeholder-facing dashboards."]}
+\small{Frontend Developer with 2+ years shipping production React and React Native applications for fintech and traveltech startups, on B2B and B2C products used by thousands of users. Migrated a live consumer app across two React Native major versions, built biometric authentication from scratch, and drove UX-focused refactors that lifted conversion 8\%. Comfortable owning a codebase solo or stepping into technical leadership when a team needs it.}
 
 % ============================================================
 %     CORE COMPETENCIES
@@ -56,15 +55,15 @@
 \vspace{1pt}
 \begin{itemize}
 
-\item \textbf{[Skill Category 1]}: [Specific skills, frameworks, tools. Be concrete.]
+\item \textbf{Frontend Development}: React, React Native, TypeScript, JavaScript, Next.js (RSC) - building production web and mobile UIs from scratch.
 
-\item \textbf{[Skill Category 2]}: [Specific skills, frameworks, tools.]
+\item \textbf{State \& Data}: Zustand, TanStack Query, Tailwind CSS - performant, maintainable frontend architecture.
 
-\item \textbf{[Skill Category 3]}: [Specific skills, frameworks, tools.]
+\item \textbf{Mobile Engineering}: React Native version migrations, biometric authentication (fingerprint/facial recognition), App Store and Play Store release management.
 
-\item \textbf{[Skill Category 4]}: [Domain expertise, methods, approaches.]
+\item \textbf{Domain Expertise}: Fintech and traveltech products, payment integrations, PWAs, UX/UI-focused development on B2B and B2C products at scale.
 
-\item \textbf{[Skill Category 5]}: [Tools, platforms, software.]
+\item \textbf{Ownership \& Collaboration}: End-to-end feature ownership, code review, informal technical leadership, close collaboration with product and design.
 
 \end{itemize}
 
@@ -77,51 +76,38 @@
 \begin{itemize}
 
 % --- Most Recent Role ---
-\item{\cventry{[YYYY--Present]}{[Job Title]}{[Company]}{[City, Country]}{}{\vspace{1pt}
+\item{\cventry{2024--2025}{Frontend Developer}{Vita Wallet}{Remote}{}{\vspace{1pt}
 \begin{itemize}
-    \item [Achievement or responsibility 1 - be specific, use numbers where possible]
-    \item [Achievement or responsibility 2]
-    \item [Achievement or responsibility 3]
-    \item [Achievement or responsibility 4]
+    \item Migrated the production React Native app from 0.66 to 0.76, cutting load and navigation times \textasciitilde30--40\% and improving stability and security
+    \item Built biometric authentication (fingerprint and facial recognition) from scratch, reducing login time \textasciitilde20\%
+    \item Fully refactored the user registration/sign-up flow, lifting user conversion 8\%
+    \item Implemented international payment links now processing \textasciitilde\$1.5M USD/month in platform transactions
+    \item Temporarily stepped in as Technical Lead for a 14-person team: coordinated App Store/Play Store releases, organized team tasks, and ran code reviews
 \end{itemize}}}
 
 \vspace{3pt}
 
 % --- Previous Role ---
-\item{\cventry{[YYYY--YYYY]}{[Job Title]}{[Company]}{[City, Country]}{}{\vspace{1pt}
+\item{\cventry{2023--2024}{Frontend Developer}{The Walltrip}{Remote}{}{\vspace{1pt}
 \begin{itemize}
-    \item [Achievement or responsibility 1]
-    \item [Achievement or responsibility 2]
-    \item [Achievement or responsibility 3]
-\end{itemize}}}
-
-\vspace{3pt}
-
-% --- Earlier Role ---
-\item{\cventry{[YYYY--YYYY]}{[Job Title]}{[Company]}{[City, Country]}{}{\vspace{1pt}
-\begin{itemize}
-    \item [Achievement or responsibility 1]
-    \item [Achievement or responsibility 2]
+    \item Sole frontend developer, fully responsible for end-to-end development and maintenance of the application
+    \item Built a wholesale flight quotation search engine from scratch, integrating external provider APIs for real-time fares and availability
+    \item Redesigned the flight search results interface, improving clarity and overall UX
+    \item Built a complete flow for creating, editing, and searching travel packages from scratch
 \end{itemize}}}
 
 \end{itemize}
 
 % ============================================================
-%     EDUCATION
+%     INDEPENDENT PROJECTS
 % ============================================================
 
-\section{Education}
+\section{Independent Projects}
 \vspace{1pt}
 \begin{itemize}
 
-\item{\cventry{[YYYY--YYYY]}{[Degree] in [Field]}{[Institution]}{[City, Country]}{}{\vspace{1pt}
-Thesis: ``[Thesis Title].'' [Brief description of research focus.]
-}}
-
-\vspace{3pt}
-
-\item{\cventry{[YYYY--YYYY]}{[Degree] in [Field]}{[Institution]}{[City, Country]}{}{\vspace{1pt}
-[Brief description or key topics.]
+\item{\cventry{2023--2024}{Coffy}{Personal Project}{}{}{\vspace{1pt}
+Progressive Web App helping users discover coffee shops tailored to different needs, with real user-generated reviews. Built with Next.js (RSC), TypeScript, TanStack Query, and Tailwind CSS; integrated Google Maps, Clerk, and Uploadthing.
 }}
 
 \end{itemize}
@@ -133,17 +119,7 @@ Thesis: ``[Thesis Title].'' [Brief description of research focus.]
 \section{Languages}
 \vspace{1pt}
 \begin{itemize}
-\item [Language 1] (native), [Language 2] (fluent), [Language 3] (intermediate).
-\end{itemize}
-
-% ============================================================
-%     PUBLICATIONS (optional)
-% ============================================================
-
-\section{Publications}
-\vspace{1pt}
-\begin{itemize}
-\item [Author(s)] ([Year]). [Title]. [Journal/Conference]. \href{[DOI_URL]}{DOI link}
+\item Spanish (native), English (B2 -- First Certificate in English), Italian (B2 -- PLIDA).
 \end{itemize}
 
 % ============================================================
@@ -153,7 +129,7 @@ Thesis: ``[Thesis Title].'' [Brief description of research focus.]
 \section{Honors and Awards}
 \vspace{1pt}
 \begin{itemize}
-\item{\textbf{[Award Name]} -- [Event/Organization] ([Year]).}
+\item{\textbf{Top 5\% Developer, Silver Leaderboard} -- LeetCode (2026), 140+ problems solved.}
 \end{itemize}
 
 % ============================================================

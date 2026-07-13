@@ -8,30 +8,60 @@ Structure answers as: **Situation** (context), **Task** (your responsibility), *
 
 Keep answers to 1-2 minutes. Be specific. End with what you learned or would do differently.
 
-## Ready-Made STAR Examples
+## STAR Candidates (Complete Manually)
 
-<!-- These are populated by /setup from your actual experience. Below are templates showing the format. -->
+<!-- Extracted from CV/LinkedIn facts, but the full Situation/Task/Action/Result narrative
+needs your specifics - fill these in before relying on them in an interview. -->
 
-### 1. [PROJECT_NAME] ([SKILL_DEMONSTRATED])
-**S:** [CONTEXT - what was happening, what was the problem]
-**T:** [YOUR RESPONSIBILITY - what you specifically needed to do]
-**A:** [WHAT YOU DID - specific actions, tools, methods]
-**R:** [OUTCOME - measurable results, adoption, impact]
-**Use for:** "[QUESTION_TYPE_1]", "[QUESTION_TYPE_2]"
+### React Native 0.66 -> 0.76 migration (Technical migration, performance)
+**Source:** CV / LinkedIn - Vita Wallet
+**What happened:** Migrated the production app across multiple React Native major versions, improving load/navigation times ~30-40% and app stability/security.
+**Why it matters:** Answers "tell me about a large technical migration", "how do you handle upgrading a legacy codebase", "how do you measure performance improvements"
+**S/T/A/R stub:**
+- Situation: What was the state of the app/codebase before the migration? Why was it needed?
+- Task:
+- Action: Which breaking changes/blockers did you hit across 0.66->0.76? How did you test regressions?
+- Result: How was the ~30-40% figure measured?
 
-### 2. [PROJECT_NAME] ([SKILL_DEMONSTRATED])
-**S:** [CONTEXT]
-**T:** [YOUR RESPONSIBILITY]
-**A:** [WHAT YOU DID]
-**R:** [OUTCOME]
-**Use for:** "[QUESTION_TYPE_1]", "[QUESTION_TYPE_2]"
+### Biometric authentication built from scratch (Ownership, security)
+**Source:** CV / LinkedIn - Vita Wallet
+**What happened:** Built fingerprint and facial recognition login from scratch, cutting login time ~20%.
+**Why it matters:** Answers "tell me about a feature you built end-to-end", "how do you approach security-sensitive features"
+**S/T/A/R stub:**
+- Situation:
+- Task:
+- Action: Which libraries/APIs did you use (native modules)? How did you handle fallback for unsupported devices?
+- Result: How was the 20% login-time reduction measured?
 
-### 3. [PROJECT_NAME] ([SKILL_DEMONSTRATED])
-**S:** [CONTEXT]
-**T:** [YOUR RESPONSIBILITY]
-**A:** [WHAT YOU DID]
-**R:** [OUTCOME]
-**Use for:** "[QUESTION_TYPE_1]", "[QUESTION_TYPE_2]"
+### Stepping in as informal Technical Lead (Initiative, leadership)
+**Source:** CV / LinkedIn - Vita Wallet
+**What happened:** Temporarily covered Technical Lead duties for a 14-person team: release management, task organization, code reviews.
+**Why it matters:** Answers "tell me about a time you took initiative", "how do you handle ambiguity/stepping outside your role", "leadership without authority"
+**S/T/A/R stub:**
+- Situation: Why did the team need someone to step in? Was there a departure or gap?
+- Task:
+- Action: How did you handle code review standards, release coordination, prioritizing team tasks?
+- Result: What happened after - did you go back to IC, or did it change your role/comp?
+
+### Sign-up/registration flow refactor (Product impact, UX)
+**Source:** CV / LinkedIn - Vita Wallet
+**What happened:** Fully refactored the registration flow, lifting user conversion 8%.
+**Why it matters:** Answers "tell me about a time your work moved a business metric", "how do you collaborate with product/design"
+**S/T/A/R stub:**
+- Situation: What was broken/suboptimal about the old flow?
+- Task:
+- Action: What specifically changed (UX, technical, both)? Did you A/B test, or measure before/after?
+- Result: How was the 8% conversion increase attributed to your change specifically?
+
+### Sole frontend owner, built quotation engine end-to-end (Autonomy, full ownership)
+**Source:** CV / LinkedIn - The Walltrip
+**What happened:** As the only frontend developer, built a wholesale flight quotation search engine from scratch, integrating external provider APIs for real-time fares.
+**Why it matters:** Answers "tell me about working with no team to lean on", "how do you handle full ownership of a product area", "integrating third-party APIs"
+**S/T/A/R stub:**
+- Situation: What existed before this - was there no quotation flow at all?
+- Task:
+- Action: Which providers/APIs did you integrate? How did you handle edge cases (pricing errors, availability gaps)?
+- Result: What was the business impact - adoption, revenue, usage?
 
 <!-- Add more STAR examples as needed. Aim for 4-6 covering different competencies. -->
 

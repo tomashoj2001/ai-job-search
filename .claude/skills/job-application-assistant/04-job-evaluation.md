@@ -16,9 +16,9 @@ How well do the required/preferred skills align with the candidate's capabilitie
 | 40-59 | Partial match, significant upskilling needed |
 | 0-39 | Fundamental mismatch |
 
-**Strong match areas:** [YOUR_PRIMARY_SKILLS]
-**Moderate match areas:** [YOUR_SECONDARY_SKILLS]
-**Weak match areas:** [SKILLS_YOU_LACK]
+**Strong match areas:** React, React Native, TypeScript, JavaScript, Next.js, Tailwind CSS, mobile app migrations/performance, PWAs, biometric auth, payment integrations
+**Moderate match areas:** Zustand/state management, TanStack Query, code review, informal tech leadership, App Store/Play Store release management
+**Weak match areas:** No formal CS/engineering degree, no backend/full-stack depth evidenced yet, no automated testing frameworks mentioned in work history, no design-system/component-library ownership evidenced, no AI/ML experience
 
 ### 2. Experience Match (0-100)
 Does work history align with what they're looking for?
@@ -30,9 +30,9 @@ Does work history align with what they're looking for?
 | 40-59 | Adjacent experience, would need to make the case |
 | 0-39 | Unrelated experience |
 
-**Strong:** [YOUR_DIRECT_EXPERIENCE_DOMAINS]
-**Moderate:** [YOUR_ADJACENT_EXPERIENCE]
-**Entry-level:** [ROLES_WITH_LIMITED_EXPERIENCE]
+**Strong:** Frontend Developer / React Developer / React Native Developer roles at startups, fintech and traveltech product companies
+**Moderate:** Frontend Engineer / Product Engineer / UI Engineer roles at larger companies, roles requiring some backend/API integration work (he has consumed external provider APIs, not built backend services)
+**Entry-level:** Roles requiring 3+ years, senior/staff-level titles, formal team-lead/EM roles (his lead experience is real but informal and short - 1 stint, not a track record)
 
 ### 3. Behavioral/Culture Fit (0-100)
 Does the role and company culture match the behavioral profile?
@@ -47,8 +47,9 @@ Does the role and company culture match the behavioral profile?
 **Red flags to research:** Department disorganization, work dominated by maintenance over development, poor chemistry with leadership, culture mismatches. Check reviews, media coverage, LinkedIn connections, and network contacts for insider perspective.
 
 ### 4. Location & Logistics (Pass/Fail + Notes)
-- Within commute range: PASS
-- Remote with occasional office: PASS
+- Fully remote (any country/timezone): PASS
+- Hybrid, based in Córdoba, Argentina: PASS (only accepted exception to remote-only)
+- On-site anywhere else, or hybrid outside Córdoba: FAIL (deal-breaker)
 - Requires relocation: FAIL (deal-breaker)
 - Frequent international travel: FLAG (discuss with user)
 
@@ -63,19 +64,19 @@ Does this role advance career goals and contain tasks that energize?
 | 0-39 | Dead end or backwards step |
 
 **Career goals:**
-- [YOUR_CAREER_GOAL_1]
-- [YOUR_CAREER_GOAL_2]
-- [YOUR_CAREER_GOAL_3]
+- Land a fully remote Frontend/React(-Native) role at an international startup, ideally Series A-C, though open to larger companies
+- Grow toward higher technical ownership over time (not an immediate priority, but a direction)
+- Build a track record that supports eventually working for a US-based/"first-world"-based company at US-comparable compensation
 
 **Motivation filter:** Evaluate not just whether you *can* do the tasks, but whether the tasks will *energize* you. Consider:
-- Tasks that energize: [YOUR_ENERGIZING_TASKS]
-- Tasks that drain: [YOUR_DRAINING_TASKS]
-- Non-task factors: leadership style, department culture, company values, degree of autonomy
+- Tasks that energize: Web-first React development (primary preference; React Native is welcome but secondary), building/owning features end-to-end, fintech/crypto/gaming/e-commerce/automotive/music-industry/hardware-tech domains, software factories/consultancies
+- Tasks that drain: Frequent requirement churn - tolerated as a normal part of startup work, not a hard blocker, but worth noting if a posting signals chronic scope instability
+- Non-task factors: Startup-stage culture (prefers Series A-C but open to bigger companies), degree of autonomy (wants high ownership, but it's a nice-to-have not a must-have)
 
 **Life situation alignment:** Consider personal constraints:
-- **Security**: [YOUR_FINANCIAL_SITUATION_CONTEXT]
-- **Flexibility**: [YOUR_SCHEDULE_CONSTRAINTS]
-- **Professional development**: [YOUR_GROWTH_PRIORITIES]
+- **Security**: Baseline compensation of $3,000 USD/month for companies based in a "first-world" country; $2,500 USD/month for LatAm-based companies. Treat postings below these as a flag, not an automatic disqualifier - discuss with the user.
+- **Flexibility**: Remote-only is a hard requirement, with one exception: hybrid roles based in Córdoba, Argentina are acceptable. Any other on-site requirement is a deal-breaker (see Location & Logistics below).
+- **Professional development**: Recently completed a self-directed career break to raise English fluency and DS&A skills specifically to be competitive for higher-bar (e.g. US-style) interview processes - values roles/companies that reward continued growth.
 
 ### 6. Salary Benchmark (Optional)
 

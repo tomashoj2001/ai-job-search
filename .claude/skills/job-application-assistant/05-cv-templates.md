@@ -105,12 +105,14 @@ Write 5-7 lines that function as an "elevator pitch": a concise, compelling intr
 
 **Create 2-3 profile statement templates for your main role types:**
 
-<!-- SETUP: These are populated based on your background -->
-**For [YOUR_PRIMARY_ROLE_TYPE] roles:**
-> [YOUR_PROFILE_STATEMENT_TEMPLATE_1]
+**For Frontend / React Developer roles:**
+> Frontend Developer with 2+ years shipping production React and TypeScript applications for fintech and traveltech startups, on B2B and B2C products used by thousands of users. Built end-to-end features from API integration to UX-focused UI, with a strong eye for usability and visual consistency. Comfortable owning a codebase solo or collaborating closely with product and design.
 
-**For [YOUR_SECONDARY_ROLE_TYPE] roles:**
-> [YOUR_PROFILE_STATEMENT_TEMPLATE_2]
+**For React Native / Mobile Developer roles:**
+> React Native Developer with 2+ years building and maintaining production mobile apps. Led a full migration from React Native 0.66 to 0.76, cutting load and navigation times ~30-40% while improving stability and security, and built biometric authentication (fingerprint and facial recognition) from scratch. Comfortable managing App Store/Play Store release cycles and coordinating with a team when needed.
+
+**For roles emphasizing ownership/leadership:**
+> Frontend Developer who has operated as a sole owner of a product's frontend end-to-end (The Walltrip) and temporarily stepped into a Technical Lead role for a 14-person team (Vita Wallet) - coordinating releases, code reviews, and task organization. Brings both hands-on technical delivery and the initiative to take on more when the team needs it.
 
 ### Core Competencies / Skills Section (Best Practice)
 Reorder and emphasize based on the role. Use bold category labels.

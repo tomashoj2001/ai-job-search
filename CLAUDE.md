@@ -1,10 +1,7 @@
-# Job Application Assistant for [YOUR_NAME]
-
-<!-- SETUP: This file is populated by running /setup -->
-<!-- After running /setup, all [PLACEHOLDER] tokens will be replaced with your actual information -->
+# Job Application Assistant for Tomás Hojnadel
 
 ## Role
-This repo is a job application workspace. Claude acts as a career advisor and application assistant for [YOUR_NAME], helping with:
+This repo is a job application workspace. Claude acts as a career advisor and application assistant for Tomás Hojnadel, helping with:
 1. **Job fit evaluation** - Assess job postings against your profile (skills, experience, behavioral traits)
 2. **CV tailoring** - Adapt existing CV templates (LaTeX/moderncv) to target specific roles
 3. **Cover letter writing** - Draft targeted cover letters using existing templates (LaTeX)
@@ -13,68 +10,63 @@ This repo is a job application workspace. Claude acts as a career advisor and ap
 
 ## Candidate Profile
 
-<!-- This section is auto-populated by /setup. You can also fill it in manually. -->
-
 ### Identity
-- **Name:** [YOUR_NAME]
-- **Location:** [YOUR_CITY], [YOUR_COUNTRY] ([YOUR_COMMUTE_CONSTRAINTS])
-- **Languages:** [YOUR_LANGUAGES]
-- **Status:** [YOUR_EMPLOYMENT_STATUS]
-- **LinkedIn headline:** "[YOUR_LINKEDIN_HEADLINE]"
+- **Name:** Tomás Hojnadel
+- **Location:** Villa Carlos Paz, Córdoba, Argentina (remote-only; sole exception is hybrid roles based in Córdoba, Argentina)
+- **Languages:** Spanish (Native), English (B2 - First Certificate in English), Italian (B2 - PLIDA)
+- **Status:** Actively job searching. Recently completed a self-directed career break (Dec 2025 - May 2026) for English fluency and DS&A practice.
+- **LinkedIn headline:** "Frontend Developer | Web & Mobile | Fintech & Traveltech"
 
 ### Education
-<!-- List your degrees, most recent first -->
-- **[DEGREE_LEVEL] in [FIELD]** ([YEAR_START]-[YEAR_END]) - [INSTITUTION]
-  - Thesis: "[THESIS_TITLE]"
-  - Topics: [KEY_TOPICS]
+No formal degree - self-taught developer.
 
 ### Professional Experience
-<!-- List your roles, most recent first -->
-- **[JOB_TITLE]** ([START_DATE] - [END_DATE]) - **[COMPANY]** ([LOCATION])
-  - [KEY_RESPONSIBILITY_1]
-  - [KEY_RESPONSIBILITY_2]
-  - [KEY_ACHIEVEMENT]
+- **Frontend Developer** (Aug 2024 - Nov 2025) - **Vita Wallet** (Remote)
+  - Migrated production React Native app from 0.66 to 0.76, cutting load/navigation times ~30-40%
+  - Built biometric authentication (fingerprint + facial recognition) from scratch, ~20% faster login
+  - Temporarily stepped in as Technical Lead for a 14-person team (releases, code reviews, task organization)
+- **Frontend Developer** (Sep 2023 - Jun 2024) - **The Walltrip** (Remote)
+  - Sole frontend developer, end-to-end ownership of the application
+  - Built a wholesale flight quotation search engine from scratch, integrating external provider APIs
 
 ### Technical Skills
-- **Primary:** [YOUR_PRIMARY_SKILLS]
-- **Secondary:** [YOUR_SECONDARY_SKILLS]
-- **Domain:** [YOUR_DOMAIN_EXPERTISE]
-- **Software:** [YOUR_TOOLS_AND_SOFTWARE]
+- **Primary:** React, React Native, TypeScript, JavaScript, Next.js
+- **Secondary:** Tailwind CSS, Zustand, TanStack Query, Git
+- **Domain:** Fintech and traveltech B2B/B2C products, mobile performance migrations, biometric auth, payment integrations, PWAs
+- **Software:** App Store / Play Store release management, code review
 
 ### Certifications
-<!-- List relevant certifications with dates -->
-- **[CERTIFICATION_NAME]** - [HOURS]h - completed [DATE]
+- **First Certificate in English (Cambridge FCE, B2)**
+- **PLIDA - Italiano B2**
 
 ### Publications
-<!-- List peer-reviewed publications, if any -->
-- [AUTHOR_LIST] ([YEAR]). [TITLE]. [JOURNAL].
+None.
 
 ### Awards
-<!-- List relevant awards, hackathons, competitions -->
-- [AWARD_NAME] - [EVENT] ([YEAR])
+- Top 5% Developer, Silver Leaderboard - LeetCode (2026), 140+ problems solved
 
 ### Behavioral Profile
-<!-- Your behavioral assessment results (PI, DISC, Myers-Briggs, or self-assessment) -->
-- **[TRAIT_1]** - [DESCRIPTION]
-- **[TRAIT_2]** - [DESCRIPTION]
-- **Strengths:** [YOUR_STRENGTHS]
-- **Growth areas:** [YOUR_GROWTH_AREAS]
-- **Thrives in:** [YOUR_IDEAL_ENVIRONMENT]
+<!-- No formal assessment; synthesized from self-report and work history. See 02-behavioral-profile.md for full detail. -->
+- **Steps up under pressure** - covered Technical Lead duties informally when the team needed it
+- **Comfortable with full ownership** - has operated as sole frontend owner of a product
+- **Strengths:** UX-conscious frontend development, self-directed learning, adaptable across autonomy levels
+- **Growth areas:** Frequent requirement churn is occasionally draining, though accepted as normal in startups
+- **Thrives in:** Fast-moving startup environments with high ownership and cross-functional collaboration with product/design
 
 ### What Excites You
-<!-- What motivates you professionally -->
-- [PASSION_1]
-- [PASSION_2]
+- Web-first React development (primary); open to React Native (secondary)
+- Fintech, crypto, e-commerce, automotive, music industry, software factories/consultancies, gaming, hardware tech
+- High technical ownership (nice-to-have, not a top priority)
 
 ### Target Sectors
-<!-- Industries and companies you're targeting -->
-- [SECTOR_1]: [EXAMPLE_COMPANIES]
-- [SECTOR_2]: [EXAMPLE_COMPANIES]
+- Fintech / Crypto: e.g. Vita Wallet-style products
+- Traveltech / E-commerce
+- Gaming, automotive, music-industry, hardware-tech, software factories/consultancies
+- Startup stage: Series A-C preferred, open to larger companies
 
 ### Deal-breakers
-<!-- Hard constraints on job search -->
-- [DEALBREAKER_1]
-- [DEALBREAKER_2]
+- No on-site roles (hybrid accepted only if based in Córdoba, Argentina)
+- Below-baseline compensation: $3,000 USD/month for companies based in a "first-world" country, $2,500 USD/month for LatAm-based companies (flag, discuss with user rather than auto-reject)
 
 ## Repo Structure
 - `cv/` - LaTeX CV variants (moderncv template, banking style)
