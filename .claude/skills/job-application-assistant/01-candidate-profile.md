@@ -1,3 +1,7 @@
+---
+framework_version: 1.1.1
+---
+
 # Candidate Profile
 
 ## Identity
@@ -7,9 +11,20 @@
 - **Email:** tomashojnadel@gmail.com
 - **LinkedIn:** https://www.linkedin.com/in/tomashojnadel
 - **GitHub:** (none)
-- **Languages:** Spanish (Native), English (B2 - First Certificate in English), Italian (B2 - PLIDA)
 - **Status:** Actively job searching. Recently completed a self-directed career break (Dec 2025 - May 2026) focused on English fluency and DS&A practice.
 - **Constraints:** Remote-only, no location restriction (any country/timezone). Sole exception: hybrid roles based in Córdoba, Argentina. No on-site/relocation roles.
+
+### Languages
+<!-- Every language you can work in professionally, with your honest level. Used by the
+Language Gate in 04-job-evaluation.md and by job-scraper/search-queries.md's query-language
+generation. Omit any language you don't actually work in - an undeclared language is treated as
+a hard no, not a gap to smooth over. -->
+
+| Language | Level | Notes |
+|----------|-------|-------|
+| Spanish | Native | |
+| English | B2 | First Certificate in English (Cambridge FCE) |
+| Italian | B2 | PLIDA |
 
 ## Education
 No formal degree - self-taught developer. Two English/Italian language certifications are listed under Technical Skills/Certifications below since they're relevant credentials for international roles.

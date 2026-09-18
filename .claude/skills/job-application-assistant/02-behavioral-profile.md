@@ -1,3 +1,7 @@
+---
+framework_version: 1.0.0
+---
+
 # Behavioral Profile
 
 <!-- No formal assessment (PI/DISC/Myers-Briggs) was provided. This profile is synthesized

@@ -32,17 +32,37 @@ A new command therefore faces a high bar. The test that admitted the existing on
 Reviews here are empirical. Bug reports are reproduced on master before the fix is considered; "all tests green" is checked against whether the tests can distinguish master from the fix. PRs whose premise doesn't reproduce get declined even when the code is fine - it has happened ([#35]'s converter fix, [#52]'s first version). You can make this fast:
 
 - State the failing case and how to reproduce it.
+- **Reproduce on the real path, not a constructed input.** A test that fails on master and passes on the fix is necessary but not sufficient: the failing input has to be one the workflow actually produces, not one the test hand-builds. Show the failure through the path the code really runs - the documented CLI invocation, real portal output, an actual data file - not a synthetic value fed straight to the function. A fix whose only demonstration is an input the real code path never receives gets declined even though its test is green.
 - Put CLI tests in `.agents/skills/<name>/cli/tests/` (bun test, network-free where possible); Python tool tests in `tests/`.
-- Run what CI runs: `python3 tools/lint_skills.py` (or `python tools/lint_skills.py` if that is your Python 3 executable), `bun run typecheck` in touched CLIs, and the relevant test suites.
+- Run what CI runs: `python3 tools/lint_skills.py`, `python3 tools/check_framework_version.py`, `python3 tools/security_guards.py`, `python3 -m unittest discover -s tests`, and in touched CLIs `bun run typecheck` + `bun test`.
 
 **Credit norm:** a change that incorporates your actual code gets a `Co-authored-by` trailer; a change written independently from your observation or report gets a named mention in the commit message and PR. Both happen unprompted.
+
+**Invited PRs:** when a maintainer comment explicitly invites a named contributor to file the PR for an issue they diagnosed or designed, that invitation reserves the implementation for them - by default for seven days from the invite, longer when they say they are working on it. A duplicate PR filed inside that window will be closed in favor of the invitee's, regardless of arrival order or polish. Review, test, and comment on an invited PR all you like - that multiplies the work; racing it doesn't. (Prospective from 2026-08-14.)
 
 ## Building for your own market? Do this instead
 
 1. Fork the repo and run `/add-portal` with your local job board - it scaffolds a portal skill matching the shipped contract, and `/scrape` picks it up automatically.
 2. Announce your fork in the pinned [Community forks & adaptations](https://github.com/MadsLorentzen/ai-job-search/discussions/78) discussion so others can find it.
+3. Run the framework update checker (`python3 tools/check_upstream_updates.py`) in your fork to check if upstream has updated any framework files and compare them with your personalized variants.
 
 Market-specific skills are genuinely valuable - they just live in forks, where their maintainers can test them and their users can find them.
+
+One practical warning: when you open a PR from a fork, GitHub targets this upstream repo by default, not your own - three personalized-fork PRs landed here by accident in a single week ([#155], [#162], [#165]). Check the "base repository" dropdown before publishing.
+
+## Porting to another AI runtime? Forks too
+
+Claude Code is the reference runtime: it is what the maintainer runs daily and what every methodology change is verified on. A parallel command tree for another runtime (Codex, Antigravity, Gemini CLI, ...) would ship untested on every change - CI cannot run those harnesses - and each accepted runtime makes the next one harder to refuse. It is the same arithmetic that keeps market-specific portals in forks.
+
+What upstream maintains for other runtimes instead:
+
+- The portal search skills in `.agents/skills/` use the portable Agent Skills format (`SKILL.md` per portal) and are auto-discovered by Codex and Antigravity today.
+- The root `AGENTS.md` points any agent at the canonical workflow specs and the profile entry point.
+- Framework instruction files carry `framework_version` markers, so a runtime fork can track methodology changes precisely (`python3 tools/check_upstream_updates.py`).
+
+Announce your runtime fork in the pinned [Community forks & adaptations](https://github.com/MadsLorentzen/ai-job-search/discussions/78) discussion and it gets listed alongside the market adaptations. The proven shape is a thin pointer: reference the specs here instead of copying them, so upstream improvements reach your fork on rebase.
+
+This is a decision, not a dogma: if cross-runtime standards mature to the point where these specs run unmodified elsewhere, or the community's center of gravity moves to runtime forks, the trade-off gets re-evaluated. Background: the architecture thread in [Community forks & adaptations](https://github.com/MadsLorentzen/ai-job-search/discussions/78).
 
 ## Practical notes
 
@@ -78,3 +98,6 @@ Questions and proposals are welcome in [Discussions](https://github.com/MadsLore
 [#73]: https://github.com/MadsLorentzen/ai-job-search/issues/73
 [#75]: https://github.com/MadsLorentzen/ai-job-search/issues/75
 [#76]: https://github.com/MadsLorentzen/ai-job-search/issues/76
+[#155]: https://github.com/MadsLorentzen/ai-job-search/pull/155
+[#162]: https://github.com/MadsLorentzen/ai-job-search/pull/162
+[#165]: https://github.com/MadsLorentzen/ai-job-search/pull/165
