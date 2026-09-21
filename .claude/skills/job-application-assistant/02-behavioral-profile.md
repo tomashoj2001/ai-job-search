@@ -19,7 +19,8 @@ sole owner of a product's frontend end-to-end.
 - **Steps up under pressure:** Temporarily covered the Technical Lead role at Vita Wallet - coordinating a 14-person team, release management, and code reviews - without it being his formal title.
 - **Comfortable with full ownership:** Sole frontend developer at The Walltrip, responsible for a product end-to-end with no team to lean on.
 - **UX-conscious builder:** *[Inferred from LinkedIn About - review before relying on this]* Describes a "strong eye for UX/UI design" and working closely with product teams on usability and visual consistency, not just shipping code to spec.
-- **Self-directed learner:** Used a deliberate career break to close specific gaps (English fluency, DS&A) rather than treating it as idle time - suggests intentional, goal-driven self-improvement.
+- **Self-directed learner:** Studied English and DS&A intensively (140+ LeetCode problems, top 5% leaderboard) while concurrently co-founding Habitia - stacked skill-building on top of building a product, not idle time between jobs.
+- **Entrepreneurial initiative:** *[Inferred from Habitia co-founder role - review before relying on this]* Co-founded and is building Habitia (full-stack SaaS for real estate agencies) from scratch, unprompted by an employer - extends the "full ownership" pattern from an employee context into a founder context, and is the first evidence of backend/full-stack initiative beyond frontend.
 
 ## How You Work Best
 - Tolerates and expects requirements to shift in a startup environment - does not treat this as friction, just normal reality of the environment.

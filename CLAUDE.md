@@ -26,13 +26,18 @@ This repo is a job application workspace. Claude acts as a career advisor and ap
   04-job-evaluation.md's Language Gate. -->
 - **CV language:** English
 
-- **Status:** Actively job searching. Recently completed a self-directed career break (Dec 2025 - May 2026) for English fluency and DS&A practice.
-- **LinkedIn headline:** "Frontend Developer | Web & Mobile | Fintech & Traveltech"
+- **Status:** Actively job searching. Co-founded Habitia (Dec 2025 - Present), a full-stack SaaS platform for real estate agencies, currently pre-MVP.
+- **Positioning:** Full Stack Developer, frontend-focused *(confirmed by candidate 2026-09-18)*.
+- **LinkedIn headline:** "Frontend Developer | Web & Mobile | Fintech & Traveltech" *(stale as of 2026-09-18 - predates Habitia/full-stack positioning; live on LinkedIn, not yet updated by candidate)*
 
 ### Education
 No formal degree - self-taught developer.
 
 ### Professional Experience
+- **Co-founder & Full Stack Engineer** (Dec 2025 - Present) - **Habitia** (Remote)
+  - Multitenant SaaS for real estate agencies (property/contract CRM, per-agency landing pages); MVP pending
+  - Built the property management module with a Mercado Libre integration for listing import/publishing
+  - Built the product landing page from scratch, 100/100 Lighthouse score across all categories
 - **Frontend Developer** (Aug 2024 - Nov 2025) - **Vita Wallet** (Remote)
   - Migrated production React Native app from 0.66 to 0.76, cutting load/navigation times ~30-40%
   - Built biometric authentication (fingerprint + facial recognition) from scratch, ~20% faster login
@@ -43,8 +48,8 @@ No formal degree - self-taught developer.
 
 ### Technical Skills
 - **Primary:** React, React Native, TypeScript, JavaScript, Next.js
-- **Secondary:** Tailwind CSS, Zustand, TanStack Query, Git
-- **Domain:** Fintech and traveltech B2B/B2C products, mobile performance migrations, biometric auth, payment integrations, PWAs
+- **Secondary:** Tailwind CSS, Zustand, TanStack Query, Git, Node.js, Express, MongoDB
+- **Domain:** Fintech and traveltech B2B/B2C products, mobile performance migrations, biometric auth, payment integrations, PWAs, proptech/real estate SaaS (Habitia), marketplace integrations (Mercado Libre)
 - **Software:** App Store / Play Store release management, code review
 
 ### Certifications
@@ -66,7 +71,7 @@ None.
 - **Thrives in:** Fast-moving startup environments with high ownership and cross-functional collaboration with product/design
 
 ### What Excites You
-- Web-first React development (primary); open to React Native (secondary)
+- Target roles *(confirmed by candidate 2026-09-18)*: Software Engineer, Fullstack Engineer, Forward Deployed Engineer, Frontend Engineer, Mobile Engineer (React Native exclusively - no other mobile stacks), Product Engineer
 - Fintech, crypto, e-commerce, automotive, music industry, software factories/consultancies, gaming, hardware tech
 - High technical ownership (nice-to-have, not a top priority)
 

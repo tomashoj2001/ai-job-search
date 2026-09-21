@@ -11,7 +11,8 @@ framework_version: 1.1.1
 - **Email:** tomashojnadel@gmail.com
 - **LinkedIn:** https://www.linkedin.com/in/tomashojnadel
 - **GitHub:** (none)
-- **Status:** Actively job searching. Recently completed a self-directed career break (Dec 2025 - May 2026) focused on English fluency and DS&A practice.
+- **Status:** Actively job searching. Co-founded Habitia (Dec 2025 - Present), a full-stack SaaS platform for real estate agencies, currently pre-MVP.
+- **Positioning:** Full Stack Developer, frontend-focused *(confirmed by candidate 2026-09-18 — Habitia CV)*. Strongest and most experienced in React/React Native; backend (Node.js/Express/MongoDB) via Habitia.
 - **Constraints:** Remote-only, no location restriction (any country/timezone). Sole exception: hybrid roles based in Córdoba, Argentina. No on-site/relocation roles.
 
 ### Languages
@@ -31,6 +32,14 @@ No formal degree - self-taught developer. Two English/Italian language certifica
 
 ## Professional Experience
 
+### Co-founder & Full Stack Engineer - Habitia (December 2025 - Present)
+Remote *(source: candidate CV, "baseCVw_Habitia", added via /expand 2026-09-18)*
+- Co-founded and am building Habitia, a multitenant SaaS platform for real estate agencies (per-agency landing pages + CRM for property and contract management); MVP still pending
+- Implemented the property management module, including a Mercado Libre integration for importing and publishing listings
+- Built the product landing page from scratch, achieving a 100/100 Lighthouse score across all categories
+- Built the "search results" and "property details" sections for agency landing pages
+- Stack: React, Next.js, TypeScript, Node.js, Express, MongoDB, Tailwind CSS
+
 ### Frontend Developer - Vita Wallet (August 2024 - November 2025)
 Remote
 - Migrated the production React Native app from 0.66 to 0.76, cutting load and navigation times ~30-40% while improving stability and security
@@ -47,10 +56,6 @@ Remote
 - Built a complete flow for creating, editing, and searching travel packages from scratch, covering core business functionality
 - Stack: React, JavaScript, Tailwind CSS
 
-### Career Break for Professional Development (December 2025 - May 2026)
-- Studied English 6+ hours/week to reach confident, professional-level technical fluency
-- Solved 140+ LeetCode problems while deepening data structures & algorithms knowledge, reaching the top 5% (Silver leaderboard)
-
 ## Independent Projects
 - **Coffy** (May 2023 - February 2024): Progressive Web App helping users discover coffee shops tailored to different needs (working, studying, leisure), with real user-generated reviews. Built with Next.js (RSC), TypeScript, TanStack Query, and Tailwind CSS; integrated Google Maps (location), Clerk (auth), and Uploadthing (image upload).
 
@@ -60,10 +65,17 @@ Remote
 - **TypeScript / JavaScript**: React, React Native, Next.js (RSC)
 - Tailwind CSS, Zustand, TanStack Query, Git
 
+### Programming & Backend *(Habitia — added via /expand 2026-09-18)*
+- **Node.js**: Express
+- MongoDB
+
 ### Domain Expertise
 - Fintech and traveltech B2B/B2C products at scale (thousands of users)
 - Mobile app performance migrations, biometric authentication, payment integrations
 - Progressive Web Apps (PWAs), Responsive Web Design, UX/UI-focused frontend development
+- Proptech / real estate SaaS: multitenant architecture, CRM workflows *(Habitia)*
+- Third-party marketplace integrations, e.g. Mercado Libre *(Habitia)*
+- Web performance optimization (100/100 Lighthouse score) *(Habitia)*
 
 ### Software & Tools
 - App Store / Play Store release management, Git, code review
