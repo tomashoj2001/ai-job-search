@@ -62,15 +62,26 @@ linkedin-search: --query "React Native Engineer" --location "Remote" --remote re
 getonbrd-search: --query "react-native" --jobage 14
 ```
 
-### Priority 3: Broader Software / Product Engineering
+### Priority 3: Broader Software / Fullstack / Product / Forward-Deployed Engineering
 
-Wider net for adjacent titles that still match the skill set.
+Wider net for adjacent titles that still match the skill set. Covers the rest of
+Tomás's target-role list *(confirmed 2026-09-18, alongside the Habitia full-stack
+expansion — see 01-candidate-profile.md's Positioning line)*: Software Engineer,
+Fullstack Engineer, Forward Deployed Engineer, and Product Engineer.
 
 ```
 site:linkedin.com/jobs "Software Developer" React Remote
+site:linkedin.com/jobs "Software Engineer" React Remote
+site:linkedin.com/jobs "Full Stack Engineer" React Remote
+site:linkedin.com/jobs "Full Stack Developer" React Remote
 site:linkedin.com/jobs "Product Engineer" React Remote
+site:linkedin.com/jobs "Forward Deployed Engineer" Remote
+site:linkedin.com/jobs "Forward Deployed Software Engineer" Remote
 linkedin-search: --query "Software Developer" --location "Remote" --remote remote
+linkedin-search: --query "Software Engineer" --location "Remote" --remote remote
+linkedin-search: --query "Full Stack Engineer" --location "Remote" --remote remote
 linkedin-search: --query "Product Engineer" --location "Remote" --remote remote
+linkedin-search: --query "Forward Deployed Engineer" --location "Remote" --remote remote
 ```
 
 ### Priority 4: Domain-Flavored Searches
