@@ -23,8 +23,8 @@ Primary (usable out of the box):
 Secondary (not yet wired into the CLI tooling - use Google `site:` searches, or build a
 custom scraper skill with `/add-portal` if volume justifies it):
 - **wellfound.com** (formerly AngelList) - startup-focused remote/hybrid roles, strong fit for Series A-C targets. Note: WebSearch results for this site were stale/closed in practice - verify before presenting.
-- **remoteok.com** - remote-first job board. Note: blocks WebFetch (403) - would need a dedicated CLI like getonbrd-search to use reliably.
-- **weworkremotely.com** - remote-first job board. Note: blocks WebFetch (403) - same caveat as above.
+- **remoteok.com** - remote-first job board. Its JSON API (`https://remoteok.com/api`, ~100 latest jobs with `position`, `tags`, `location`, `date`, `url`) returns 200 to scripted requests - the best basis for a dedicated CLI via `/add-portal`. The API terms require crediting Remote OK and linking back to each job's Remote OK URL.
+- **weworkremotely.com** - remote-first job board. The RSS feeds (`/remote-jobs.rss`, or per category such as `/categories/remote-front-end-programming-jobs.rss`) return 200, but the HTML search page (`/remote-jobs/search?term=...`) returns 403 - read the feeds, not the site search.
 - Direct Google searches with `site:` filters for known target companies' career pages
 
 ## Query Categories
