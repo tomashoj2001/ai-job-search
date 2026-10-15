@@ -18,7 +18,7 @@ The `site:` query templates in this file are the **WebSearch fallback** — for 
 
 Primary (usable out of the box):
 - **linkedin-search skill** (`.agents/skills/linkedin-search`) - country-agnostic, pass `--location "Remote"` or a specific city. Most "Remote" results are actually remote-within-country - always check the result's location before treating it as a real match.
-- **getonbrd-search skill** (`.agents/skills/getonbrd-search`) - LatAm-focused tech jobs. Search is tag-based (`--query react`, `--query react-native`, `--query javascript`, ...), not free text. **Always read each result's `location` field** - remote postings state exactly which countries are eligible (e.g. "must reside in Argentina, Chile or Mexico"), and that's the real filter, not the word "remote" itself. Personal-use only - see `.agents/skills/getonbrd-search/SKILL.md` for the robots.txt note before scaling up volume.
+- **getonbrd-search skill** (`.agents/skills/getonbrd-search`) - LatAm-focused tech jobs via getonbrd's official Public API; `--query` is free text. **Run each query twice:** `--remote` returns only fully-remote jobs, while `--country AR` returns locally-remote jobs whose eligible zone includes Argentina (plus a few Buenos Aires hybrids) - the two result sets don't overlap, and most matches for this candidate come from `--country AR`. `--jobage` is filtered client-side. A search result's `location` only says "Remote (local)"; the real eligibility rule ("candidates must reside in ...") is `detail`'s `remote_policy` - check it before presenting a job. Keep volume low (see the courtesy note in its SKILL.md).
 
 Secondary (not yet wired into the CLI tooling - use Google `site:` searches, or build a
 custom scraper skill with `/add-portal` if volume justifies it):
@@ -46,8 +46,10 @@ site:linkedin.com/jobs "React Engineer" Remote
 site:wellfound.com "Frontend Developer" React
 linkedin-search: --query "React Developer" --location "Remote" --remote remote
 linkedin-search: --query "Frontend Engineer" --location "Remote" --remote remote
-getonbrd-search: --query "react" --jobage 14
-getonbrd-search: --query "javascript" --jobage 14
+getonbrd-search: --query "react" --remote --jobage 14
+getonbrd-search: --query "react" --country AR --jobage 14
+getonbrd-search: --query "javascript" --remote --jobage 14
+getonbrd-search: --query "javascript" --country AR --jobage 14
 ```
 
 ### Priority 2: React Native / Mobile Roles
@@ -59,7 +61,8 @@ site:linkedin.com/jobs "React Native Developer" Remote
 site:linkedin.com/jobs "React Native Engineer" Remote
 linkedin-search: --query "React Native Developer" --location "Remote" --remote remote
 linkedin-search: --query "React Native Engineer" --location "Remote" --remote remote
-getonbrd-search: --query "react-native" --jobage 14
+getonbrd-search: --query "react native" --remote --jobage 14
+getonbrd-search: --query "react native" --country AR --jobage 14
 ```
 
 ### Priority 3: Broader Software / Fullstack / Product / Forward-Deployed Engineering
