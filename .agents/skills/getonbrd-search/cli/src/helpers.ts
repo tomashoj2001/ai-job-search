@@ -25,6 +25,19 @@ export function writeError(error: string, code: string): void {
   process.stderr.write(JSON.stringify({ error, code }) + "\n")
 }
 
+/**
+ * Thrown by `parseJobDetail` when a fetched page does not parse as a job posting
+ * (e.g. a 200 redirect to the jobs index, a login wall, or a markup change).
+ * `code` is the CLI error code the command reports via `writeError`.
+ */
+export class JobParseError extends Error {
+  readonly code = "PARSE_ERROR"
+  constructor(message: string) {
+    super(message)
+    this.name = "JobParseError"
+  }
+}
+
 function sleep(ms: number): Promise<void> {
   return new Promise((r) => setTimeout(r, ms))
 }
@@ -402,10 +415,14 @@ export function parseRemotePolicy(bodyHtml: string): { label: string | null; tex
   }
 }
 
-/** Parse a public job page into a JobDetail. `slug` is the requested job id. */
+/**
+ * Parse a public job page into a JobDetail. `slug` is the requested job id.
+ * Throws `JobParseError` when the page is not a job posting (see the check below).
+ */
 export function parseJobDetail(html: string, slug: string, finalUrl?: string): JobDetail {
+  const microdataTitle = html.match(/itemprop="title"[^>]*>([\s\S]*?)<\/span>/i)?.[1] ?? null
   const title =
-    html.match(/itemprop="title"[^>]*>([\s\S]*?)<\/span>/i)?.[1] ??
+    microdataTitle ??
     html.match(/<title>([\s\S]*?)(?: at [^<]*)?\| Get on Board/i)?.[1] ??
     null
 
@@ -477,6 +494,20 @@ export function parseJobDetail(html: string, slug: string, finalUrl?: string): J
     const descHtml = h2 === -1 ? body : body.slice(0, h2)
     description = htmlToText(descHtml) || null
   }
+
+  // Every field is optional, so without this check a page that is not a job
+  // posting would come back as an empty record that callers treat as a real job.
+  // Require at least one posting-specific anchor: the microdata title or a
+  // non-empty job body. The <title> fallback does not count - every getonbrd page
+  // has one (the jobs index reads "Curated tech jobs in Latin America | Get on Board").
+  const hasPostingTitle = microdataTitle !== null && cleanInline(microdataTitle) !== ""
+  if (!hasPostingTitle && !description) {
+    throw new JobParseError(
+      `${finalUrl || `${BASE_URL}/jobs/${slug}`} did not parse as a Get on Board job posting ` +
+        `(no itemprop="title" and no job body) - it may have redirected elsewhere or the page markup changed`,
+    )
+  }
+
   // Fallback: the header location tooltip carries the same eligibility sentence
   // (though sometimes less specific than the policy section).
   if (!policy.text) {

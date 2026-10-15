@@ -1,8 +1,10 @@
 // Offline unit tests: API mapping, location derivation, the client-side --jobage
-// filter, slug parsing, and the detail-page parser against a fixture modeled on
-// the live markup (verified 2026-10-15). No network: fetch is mocked where used.
+// filter, slug parsing, the detail-page parser against a fixture modeled on the
+// live markup (verified 2026-10-15), and detail's PARSE_ERROR on non-job pages.
+// No network: fetch is mocked where used.
 import { afterEach, describe, expect, test } from "bun:test";
 import {
+  JobParseError,
   apiGet,
   decodeHtmlEntities,
   deriveLocation,
@@ -16,6 +18,7 @@ import {
   type GobJob,
 } from "../src/helpers";
 import { buildUrl, filterByAge, runSearch } from "../src/commands/search";
+import { runDetail } from "../src/commands/detail";
 
 const originalFetch = globalThis.fetch;
 const originalStdoutWrite = process.stdout.write;
@@ -379,5 +382,82 @@ describe("parseJobDetail", () => {
     const j = parseJobDetail(noPolicy, "x");
     expect(j.remote_policy).toBe("Position is 100% remote, but candidates must reside in Mexico.");
     expect(j.remote_modality).toBeNull();
+  });
+});
+
+// A 200 page that is not a job posting: the jobs index (live <title> text, verified
+// 2026-10-15). Its <title> matches the parser's title fallback, so it must not count.
+const JOBS_INDEX_PAGE = `<!DOCTYPE html><html lang="en"><head><title>Curated tech jobs in Latin America | Get on Board</title></head><body>
+<h1 class="size5">Curated tech jobs in Latin America</h1>
+<ul class="sgb-results-list"><li><a href="/jobs/programming/senior-react-developer-acme-remote">Senior React Developer</a></li></ul>
+</body></html>`;
+
+// A bare page with neither a title nor any job markup (e.g. a login wall).
+const BARE_PAGE = `<!DOCTYPE html><html lang="en"><head><title>Get on Board</title></head><body><form action="/users/sign_in"></form></body></html>`;
+
+describe("parseJobDetail rejects pages that are not job postings", () => {
+  for (const [name, html] of [["the jobs index", JOBS_INDEX_PAGE], ["a bare login-style page", BARE_PAGE]] as const) {
+    test(`${name} throws JobParseError with code PARSE_ERROR`, () => {
+      let caught: unknown;
+      try {
+        parseJobDetail(html, "senior-react-developer-acme-remote", "https://www.getonbrd.com/jobs");
+      } catch (e) {
+        caught = e;
+      }
+      expect(caught).toBeInstanceOf(JobParseError);
+      expect((caught as JobParseError).code).toBe("PARSE_ERROR");
+      expect((caught as JobParseError).message).toContain("https://www.getonbrd.com/jobs");
+    });
+  }
+
+  test("the valid job fixture still parses", () => {
+    expect(() => parseJobDetail(DETAIL_FIXTURE, "senior-full-stack-engineer-worthy-remote")).not.toThrow();
+  });
+
+  test("a posting missing its job body still parses (the microdata title is enough)", () => {
+    const noBody = DETAIL_FIXTURE.replace(/<div id="job-body"/, '<div id="removed-body"');
+    const j = parseJobDetail(noBody, "x");
+    expect(j.title).toBe("Senior Full-Stack Engineer");
+    expect(j.description).toBeNull();
+  });
+
+  test("a posting missing its microdata title still parses (the job body is enough)", () => {
+    const noTitle = DETAIL_FIXTURE.replace(/itemprop="title"/, 'data-x="title"');
+    const j = parseJobDetail(noTitle, "x");
+    expect(j.title).toBe("Senior Full-Stack Engineer");
+    expect(j.description).toContain("Ship features across the stack");
+  });
+});
+
+describe("runDetail", () => {
+  function servePage(html: string): void {
+    globalThis.fetch = (async () =>
+      new Response(html, { status: 200, headers: { "Content-Type": "text/html" } })) as unknown as typeof fetch;
+  }
+
+  test("a 200 non-job page exits 1 with PARSE_ERROR JSON on stderr and nothing on stdout", async () => {
+    servePage(JOBS_INDEX_PAGE);
+    const err = captureStream("stderr");
+    const out = captureStream("stdout");
+    const code = await runDetail({ id: "senior-react-developer-acme-remote", format: "json" });
+    expect(code).toBe(1);
+    expect(out()).toBe("");
+    const parsed = JSON.parse(err());
+    expect(Object.keys(parsed).sort()).toEqual(["code", "error"]);
+    expect(parsed.code).toBe("PARSE_ERROR");
+    expect(parsed.error).toMatch(/did not parse as a Get on Board job posting/);
+  });
+
+  test("a valid job page exits 0 with the parsed record on stdout", async () => {
+    servePage(DETAIL_FIXTURE);
+    const err = captureStream("stderr");
+    const out = captureStream("stdout");
+    const code = await runDetail({ id: "senior-full-stack-engineer-worthy-remote", format: "json" });
+    expect(code).toBe(0);
+    expect(err()).toBe("");
+    const job = JSON.parse(out());
+    expect(job.id).toBe("senior-full-stack-engineer-worthy-remote");
+    expect(job.title).toBe("Senior Full-Stack Engineer");
+    expect(job.company).toBe("Worthy");
   });
 });

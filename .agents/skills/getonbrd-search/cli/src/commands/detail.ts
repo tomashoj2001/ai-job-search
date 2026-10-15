@@ -1,4 +1,12 @@
-import { BASE_URL, htmlGet, normalizeSlug, parseJobDetail, writeError, type JobDetail } from "../helpers.js"
+import {
+  BASE_URL,
+  JobParseError,
+  htmlGet,
+  normalizeSlug,
+  parseJobDetail,
+  writeError,
+  type JobDetail,
+} from "../helpers.js"
 
 export interface DetailOpts {
   id: string // a job slug (search result `id`) or a getonbrd.com job URL
@@ -42,7 +50,9 @@ export async function runDetail(opts: DetailOpts): Promise<number> {
     process.stdout.write((opts.format === "plain" ? renderPlain(job) : JSON.stringify(job, null, 2)) + "\n")
     return 0
   } catch (e) {
-    writeError(e instanceof Error ? e.message : String(e), "DETAIL_FAILED")
+    // A 200 page that is not a job posting is a PARSE_ERROR, not an empty record.
+    if (e instanceof JobParseError) writeError(e.message, e.code)
+    else writeError(e instanceof Error ? e.message : String(e), "DETAIL_FAILED")
     return 1
   }
 }
